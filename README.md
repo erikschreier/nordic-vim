@@ -22,6 +22,10 @@ I also reworked the theme for the zsh-shell to fit in most terminals, now its no
 If not already installed you need git on your machine:
 
     $ sudo apt-get install git
+    
+Also you need the Vundle pluginmanager to be installed
+
+    https://github.com/VundleVim/Vundle.vim
      
 Then clone the repo to your homefolder, check the included files and move the .vimrc file and the .vim folder inside the nordic-vim folder to your hove folder.
 
@@ -30,3 +34,6 @@ Then clone the repo to your homefolder, check the included files and move the .v
     $ mv .vimrc .vim ~/
     cd .. && rm -rf nordic-vim
      
+### Activate the Plugins
+
+    $ vim +PluginInstall
