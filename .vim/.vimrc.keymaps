@@ -1,0 +1,44 @@
+" vim: ts=4 sts=4 sw=4 tw=79 cc=+1 et ai ff=unix
+"------------------------------------------------------------------------------
+" Author:  Erik Schreier - erik-schreier@gmx.de
+" Source:  https://github.com/erikschreier/nordic-vim
+" Version: 1.0 (Jun 12 2019)
+" File:    ~/.vim/.vimrc.keymaps
+"==============================================================================
+" Remap of the leaderkey to use <SPACE> instead of ,
+"------------------------------------------------------------------------------
+let mapleader=" "
+"------------------------------------------------------------------------------
+" Hold <CTRL> to switch between splits using the <h>, <j>, <k> and <l> key.
+"------------------------------------------------------------------------------
+nn <C-J> <C-W><C-J>
+nn <C-K> <C-W><C-K>
+nn <C-L> <C-W><C-L>
+nn <C-H> <C-W><C-H>
+"------------------------------------------------------------------------------
+" Disables the arrow keys to force you to use <h>, <j>, <k> and <l> to move.
+"------------------------------------------------------------------------------
+ino <Up>    <NOP>
+ino <Down>  <NOP>
+ino <Left>  <NOP>
+ino <Right> <NOP>
+
+no  <Up>    <NOP>
+no  <Down>  <NOP>
+no  <Left>  <NOP>
+no  <Right> <NOP>
+"------------------------------------------------------------------------------
+" Leave insert and commandlinemode using <j> + <j> and visual mode using <v>.
+"------------------------------------------------------------------------------
+ino jj <esc>
+cno jj <c-c>
+vno v  <esc>
+"------------------------------------------------------------------------------
+" Use <SPACE> to fold or unfold codeblocks while cursor is inside one.
+"------------------------------------------------------------------------------
+nn <space> za
+"------------------------------------------------------------------------------
+" Disable the highlighting of searches using <SPACE> + <RETURN>.
+"------------------------------------------------------------------------------
+nm <leader><cr> :nohlsearch<cr>
+"==============================================================================

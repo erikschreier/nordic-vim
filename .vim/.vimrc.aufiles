@@ -1,0 +1,27 @@
+" vim: ts=4 sts=4 sw=4 tw=79 cc=+1 et ai ff=unix
+"==============================================================================
+" Author:  Erik Schreier - erik-schreier@gmx.de
+" Source:  https://github.com/erikschreier/nordic-vim
+" Version: 1.0 (Jun 12 2019)
+" File:    ~/.vim/.vimrc.aufiles
+"------------------------------------------------------------------------------
+" Caution: If not on an UNIX System change the fileformat (ff) variable in
+"          line 20 and 21 to your system defaults.
+"==============================================================================
+" Highlights for leading tabs and trailing whitespaces to avoid pep8 errors.
+"------------------------------------------------------------------------------
+hi BadWhitespace ctermbg=red
+
+au BufNewFile,BufRead *.py,*.rb match BadWhitespace /^\t\+/
+au BufNewFile,BufRead *.py,*.rb match BadWhitespace /\s\+$/
+"------------------------------------------------------------------------------
+" Settings for indentation rules, max textwidth and eol format.
+"------------------------------------------------------------------------------
+au BufNewFile,BufRead *.py set ts=4 sts=4 sw=4 tw=79 cc=+1 et ai ff=unix
+au BufNewFile,BufRead *.rb set ts=2 sts=2 sw=2 tw=79 cc=+1 et ai ff=unix
+"------------------------------------------------------------------------------
+" Keybinds to execute files of interpreted languages in vim.
+"------------------------------------------------------------------------------
+au BufNewFile,BufRead *.py nnoremap <F9> :w !python<cr>
+au BufNewFile,BufRead *.rb nnoremap <F9> :w !ruby<cr>
+"==============================================================================
